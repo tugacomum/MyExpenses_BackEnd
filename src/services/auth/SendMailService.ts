@@ -9,11 +9,11 @@ export default new class SendMailService {
   constructor() {
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
-      port: 465,
-      secure: true,
+      port: 587,
+      secure: false,
       auth: {
-        user: '',
-        pass: ''
+        user: process.env.EMAIL_SECRET,
+        pass: process.env.PASSWORD_SECRET
       }
     });
 
